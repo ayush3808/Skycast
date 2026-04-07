@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skycast</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <div class="bg-layer bg-layer-1"></div>
+  <div class="bg-layer bg-layer-2"></div>
+  <div class="bg-particles" id="particles"></div>
+
+  <div class="loading-overlay" id="loadingOverlay">
+    <div class="spinner"></div>
+    <p>Fetching weather...</p>
+  </div>
+
+  <div class="card">
+
+    <div class="topbar">
+      <h2 class="brand"><i class="fa fa-cloud-sun"></i> Skycast</h2>
+      <button id="themeToggle" title="Toggle dark/light mode">
+        <i class="fa fa-moon" id="themeIcon"></i>
+      </button>
+    </div>
+
+    <div class="search">
+      <input type="text" placeholder="Search city..." id="cityInput">
+      <button id="searchBtn" title="Search">
+        <i class="fa fa-search"></i>
+      </button>
+      <button id="locationBtn" title="Use my location">
+        <i class="fa fa-location-dot"></i>
+      </button>
+    </div>
+
+    <ul class="suggestions"></ul>
+
+    <p class="error"><i class="fa fa-circle-exclamation"></i> City not found. Try again.</p>
+
+    <div class="weather">
+
+      <div class="weather-hero">
+        <img src="" class="weather-icon" alt="weather icon">
+        <div class="weather-main-info">
+          <h1 class="temp"></h1>
+          <h2 class="city"></h2>
+          <p class="weather-desc"></p>
+        </div>
+      </div>
+
+      <div class="extra-row">
+        <div class="extra-item">
+          <i class="fa fa-temperature-half"></i>
+          <span class="feels-like-label">Feels like</span>
+          <span class="feels-like"></span>
+        </div>
+        <div class="extra-item">
+          <i class="fa fa-sun"></i>
+          <span>Sunrise</span>
+          <span class="sunrise"></span>
+        </div>
+        <div class="extra-item">
+          <i class="fa fa-moon"></i>
+          <span>Sunset</span>
+          <span class="sunset"></span>
+        </div>
+      </div>
+
+      <div class="details">
+        <div class="col">
+          <i class="fa fa-droplet"></i>
+          <div>
+            <p class="humidity"></p>
+            <span>Humidity</span>
+          </div>
+        </div>
+        <div class="col">
+          <i class="fa fa-wind"></i>
+          <div>
+            <p class="wind"></p>
+            <span>Wind</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="aqi-section">
+        <h3><i class="fa fa-leaf"></i> Air Quality</h3>
+        <div class="aqi-bar-wrap">
+          <div class="aqi-bar" id="aqiBar"></div>
+        </div>
+        <p class="aqi-label" id="aqiLabel">—</p>
+      </div>
+
+      <div class="weather-tip" id="weatherTip">
+        <i class="fa fa-lightbulb"></i>
+        <span id="tipText"></span>
+      </div>
+
+
+      <div class="hourly-section">
+        <h3><i class="fa fa-clock"></i> Next 24 Hours</h3>
+        <div class="hourly-container" id="hourlyContainer"></div>
+      </div>
+
+      <div class="forecast">
+        <h3><i class="fa fa-calendar-days"></i> 5-Day Forecast</h3>
+        <div class="forecast-container"></div>
+      </div>
+
+      <div class="favorites-section">
+        <div class="fav-header">
+          <h3><i class="fa fa-star"></i> Favorites</h3>
+          <button id="addFavBtn" title="Save current city">
+            <i class="fa fa-plus"></i> Save city
+          </button>
+        </div>
+        <div class="fav-list" id="favList"></div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
